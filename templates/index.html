@@ -17,6 +17,10 @@
                     <th> First Name (FN) </th>
                     <th> Last Name (LN) </th>
                     <th> Date of Birth (DOB) </th>
+                    <th> Gender </th>
+                    <th> Admission Day </th>
+                    <th> Discharge Day </th>
+                    <th> Insurance Type </th>
                 </tr>
                 <!-- this next below part is special, where we have the equivalent of a LOOP here -->
                 <!-- where we go through our variable that we have shared via app.py in line 22, listPatients -->
@@ -29,6 +33,10 @@
                         <td> {{ i.firstname }} </td>
                         <td> {{ i.lastName }} </td>
                         <td> {{ i.dob }} </td>
+                        <td> {{ i.gender }} </td>
+                        <td> {{ i.admissionday }} </td>
+                        <td> {{ i.dischargeday }} </td>
+                        <td> {{ i.insurance }} </td>
                     </tr>
                 {% endfor %}
             </table>
