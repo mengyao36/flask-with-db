@@ -22,21 +22,13 @@ def index():
     print('patientListSql:', patientListSql)
     return render_template('index.html', listPatients=patientListSql) # note, these are two variables, patientsList is what we can then look up in the .html, and the patientsListSql is the actual data we are pulling from the sqlite db
 
-@app.route('/bootstrap')
-def bootstrap():
-    conn = get_db_connection()
-    patientListSql = conn.execute('SELECT * FROM patient_table').fetchall()
-    conn.close()
-    print('patientListSql:', patientListSql)
-    return render_template('bootstrap_example.html', listPatients=patientListSql) # note, these are two variables, patientsList is what we can then look up in the .html, and the patientsListSql is the actual data we are pulling from the sqlite db
-
 @app.route('/patients')
 def bootstrap():
     conn = get_db_connection()
     patientListSql = conn.execute('SELECT * FROM patient_table').fetchall()
     conn.close()
     print('patientListSql:', patientListSql)
-    return render_template('bootstrap_example.html', listPatients=patientListSql) 
+    return render_template('bootstrap_example.html', listPatients=patientListSql) # note, these are two variables, patientsList is what we can then look up in the .html, and the patientsListSql is the actual data we are pulling from the sqlite db
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)
