@@ -2,7 +2,7 @@ import sqlite3
 
 # Connecting to sqlite
 # connection object
-connect = sqlite3.connect('./flask-with-db/patients.db')
+connect = sqlite3.connect('patients')
  
 # db object
 db = connect.cursor()
@@ -27,11 +27,11 @@ db.execute(table)
 connect.commit() 
 
 ## insert data into the table
-db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob) values('12345', 'John', 'Smith', '01/01/2000', 'male', '01/01/2022', '01/02/2022', 'Medicare')")
-db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob) values('23456', 'Jane', 'Doe', '02/02/2001', 'fmale', '02/01/2022', '02/02/2022', 'Medicare')")
-db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob) values('34567', 'Mary', 'Smith', '03/03/2002', 'fmale', '03/01/2022', '03/02/2022', 'Medicaid')")
-db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob) values('45678', 'Bob', 'Smith', '04/04/2003', 'male', '04/01/2022', '04/02/2022', 'Medicare')")
-db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob) values('56789', 'Jane', 'Doe', '05/05/2004', 'fmale', '05/01/2022', '05/02/2022', 'Private')")
+db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob, gender, admissionday, dischargeday, insurance) values('12345', 'John', 'Smith', '01/01/2000', 'male', '01/01/2022', '01/02/2022', 'Medicare')")
+db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob, gender, admissionday, dischargeday, insurance) values('23456', 'Jane', 'Doe', '02/02/2001', 'fmale', '02/01/2022', '02/02/2022', 'Medicare')")
+db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob, gender, admissionday, dischargeday, insurance) values('34567', 'Mary', 'Smith', '03/03/2002', 'fmale', '03/01/2022', '03/02/2022', 'Medicaid')")
+db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob, gender, admissionday, dischargeday, insurance) values('45678', 'Bob', 'Smith', '04/04/2003', 'male', '04/01/2022', '04/02/2022', 'Medicare')")
+db.execute("INSERT INTO patient_table(mrn, firstname, lastname, dob, gender, admissionday, dischargeday, insurance) values('56789', 'Jane', 'Doe', '05/05/2004', 'fmale', '05/01/2022', '05/02/2022', 'Private')")
 
 connect.commit()
 

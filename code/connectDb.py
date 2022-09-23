@@ -2,7 +2,7 @@ import sqlite3
 import pandas as pd
 
 def get_db_connection():
-    conn = sqlite3.connect('flask-with-db/patients.db')
+    conn = sqlite3.connect('patients') # if add the relative path, actually does not run, just use database name
     conn.row_factory = sqlite3.Row
     return conn
 
