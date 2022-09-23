@@ -11,7 +11,7 @@ def get_db_connection():
     print('dir:', dir)
     conn = sqlite3.connect(dir) # create a connection to the database
     conn.row_factory = sqlite3.Row # The line of code assigning sqlite3.Row to the row_factory of connection creates what some people call a 'dictionary cursor', - instead of tuples it starts returning 'dictionary' rows after fetchall or fetchone
-    # for more information about these two lines, good conversation on stackoverflow: https://stackoverflow.com/questions/44009452/what-is-the-purpose-of-the-row-factory-method-of-an-sqlite3-connection-object found there
+   
     return conn
 
 @app.route('/')
@@ -30,6 +30,13 @@ def bootstrap():
     print('patientListSql:', patientListSql)
     return render_template('bootstrap_example.html', listPatients=patientListSql) # note, these are two variables, patientsList is what we can then look up in the .html, and the patientsListSql is the actual data we are pulling from the sqlite db
 
+@app.route('/patients')
+def bootstrap():
+    conn = get_db_connection()
+    patientListSql = conn.execute('SELECT * FROM patient_table').fetchall()
+    conn.close()
+    print('patientListSql:', patientListSql)
+    return render_template('bootstrap_example.html', listPatients=patientListSql) 
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)
