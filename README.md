@@ -6,7 +6,7 @@
   Screenshoots added
 
 ## Create VM on Google Cloud Console and deploy flask app
-  Link: 35.238.6.81
-        35.238.6.81/patients
+  -Link: 35.238.6.81
+        -35.238.6.81/patients
   
   Note: VM has been stopped, screenshoots are saved and added to "screenshoots" folder
